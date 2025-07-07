@@ -1,6 +1,7 @@
 # android_flutter_app
 
-A new Flutter project.
+Android Flutter班で
+漫画アプリっぽいものを作るリポジトリです
 
 ## Getting Started
 
