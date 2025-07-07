@@ -36,18 +36,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   
-  # Vivion Flutter Viewer
-  vivion_flutter_viewer:
-    path: /Users/a-igarashi/app-viewerのコピー
-  
-  # Dependencies for Vivion Flutter Viewer
-  flutter_hooks: ^0.20.4
+  # State management
   hooks_riverpod: ^2.4.9
-  http: ^1.1.0
-  scrollable_positioned_list: ^0.3.8
-  preload_page_view: ^0.2.0
-  dio: ^5.4.3
-  extended_tabs: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -72,7 +62,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -100,4 +91,4 @@ flutter:
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
+  # see https://flutter.dev/font-from-package

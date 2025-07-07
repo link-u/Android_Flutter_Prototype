@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vivion_flutter_viewer/vivion_flutter_viewer.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'screens/manga_reader_screen.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -186,11 +187,27 @@ class ScreenD extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
+                // 仮の漫画データを直接作成
+                final List<String> dummyPages = [
+                  'Page 1',
+                  'Page 2',
+                  'Page 3',
+                  'Page 4',
+                  'Page 5',
+                ];
+                
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MangaViewerScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => MangaReaderScreen(pages: dummyPages),
+                  ),
                 );
               },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepPurple,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+              ),
               child: const Text('漫画ビューワーを開く'),
             ),
           ],
@@ -200,23 +217,4 @@ class ScreenD extends StatelessWidget {
   }
 }
 
-class MangaViewerScreen extends StatelessWidget {
-  const MangaViewerScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('漫画ビューワー'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
-      body: const Center(
-        child: Text(
-          '漫画ビューワー画面\n\n（表示する漫画データがないため、\nここにViewerウィジェットを配置します）',
-          style: TextStyle(fontSize: 16),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
-  }
-}
