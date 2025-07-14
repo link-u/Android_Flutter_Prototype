@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'screens/manga_reader_screen.dart';
+import 'pages/manga_reader/manga_reader_page.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -187,19 +187,10 @@ class ScreenD extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                // 仮の漫画データを直接作成
-                final List<String> dummyPages = [
-                  'Page 1',
-                  'Page 2',
-                  'Page 3',
-                  'Page 4',
-                  'Page 5',
-                ];
-                
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MangaReaderScreen(pages: dummyPages),
+                    builder: (context) => const MangaReaderPage(),
                   ),
                 );
               },
